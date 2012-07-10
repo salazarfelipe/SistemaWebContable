@@ -1,0 +1,367 @@
+html, div, map, dt, isindex, form, header, aside, section, section, article, footer {  
+    display: block;  
+} 
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	background: #F8F8F8;
+	font-size: 12px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+}
+
+footer{
+	height:10%r;
+}
+
+
+/*----------------------------------------------
+----------------- CLASES --------------------------
+------------------------------------------------
+*/
+.contenedor{
+	display: block;
+	height: 80%;
+	margin:7px auto;
+	overflow: hidden;
+	padding: 20px;
+	width:90%;
+}
+
+.header {
+	background: #222222 url(../img/header_bg.png) repeat-x;
+	box-shadow:3px 3px 5px black;
+	height: 55px;
+	width: 100%;
+}
+
+.tituloSitio{
+	background: url(../img/header_shadow.png) no-repeat left top;
+	text-align: center;
+	text-indent: 4.5%;
+	width: 68%;
+}
+
+.tituloSitio,.tituloSeccion {
+	color: #fff;
+	display: block;
+	font-size: 22px;
+	font-weight: normal;
+	float: left;
+	height: 55px;
+	line-height: 55px;
+	margin: 0;
+	text-align: left;
+	text-indent: 1.8%;
+	text-shadow: 0 -1px 0 #000;
+	width: 23%;
+}
+
+/* Secondary Header Bar */
+
+#barraSecundaria {
+	background: #F1F1F4 url(../img/secondary_bar.png) repeat-x;
+	height: 38px;
+	width: 100%;
+}
+
+#barraSecundaria .usuario {
+	float: left;
+	height: 38px;
+	width: 23%;
+}
+
+.usuario p {
+	background: url(../img/icn_user.png) no-repeat center left;
+	color: #666666;
+	display: block;
+	float: left;
+	font-weight: bold;
+	line-height: 35px;
+	margin: 0;
+	margin-left: 6%;
+	height: 35px;
+	padding: 0;
+	text-indent: 25px;
+	text-shadow: 0 1px 0 #fff;
+	width: 85%;
+}
+
+.usuario a {
+	text-decoration: none;
+	color: #666666
+}
+
+.usuario a:hover {
+	color: #77BACE;
+}
+
+.usuario a.logout_user {
+	background: url(../img/icn_logout.png) center no-repeat;
+	display: block;
+	float: left;
+	height: 35px;
+	text-indent: -5000px;
+	width: 16px;
+}
+
+/* Breadcrumbs */
+
+#barraSecundaria .breadcrumbs_container {
+	background: url(../img/secondary_bar_shadow.png) no-repeat left top;
+	float: left;
+	height: 38px;
+	width: 77%;
+}
+
+.boton {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+	box-shadow: 0 1px 0 #fff;
+		-webkit-box-shadow: 0 1px 0 #fff;
+		-moz-box-shadow: 0 1px 0 #fff;
+	float: left;
+	height: 23px;
+	margin: 4px 3%;
+	padding: 0 10px;
+}
+
+.boton a {
+	display: inline-block;
+	float: left;
+	height: 24px;
+	line-height: 23px;
+}
+
+.boton a.current, .boton a.current:hover {
+	color: #9E9E9E;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+	text-decoration: none;
+}
+
+.boton a:link, .boton a:visited {
+	color: #44474F;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.boton a:hover {
+	color: #222222;
+}
+
+.breadcrumb_divider {
+	background: url(../img/breadcrumb_divider.png) no-repeat;
+	display: inline-block;
+	float: left;
+	height: 24px;
+	margin: 0 5px;
+	width: 12px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	background: #E0E0E3 url(../img/sidebar.png) repeat;
+	box-shadow: 2px 0px 15px grey;
+	float: left;
+	margin-top: -4px;
+	height: 86.5%;
+	width: 23%;
+}
+
+#sidebar hr{
+	background: url(../img/sidebar_divider.png) repeat-x;
+	border: none;
+	display: block;
+	height: 2px;
+	outline: none;
+	width: 100%;
+}
+#sidebar footer {
+margin-top: 20%;
+}
+#sidebar p {
+color: #666666;
+padding-left: 6%;
+text-shadow: 0 1px 0 #fff;
+margin: 10px 0 0 0;}
+
+#sidebar a {
+color: #666666;
+text-decoration: none;
+}
+
+#sidebar a:hover {
+text-decoration: underline;
+}
+#menu{
+	display: inline-block;
+	height: 80%;
+	width:75%;
+}
+
+#menu ul{
+	list-style: none;
+}
+
+#menu ul li{
+	clear: both;
+	padding:3px;
+	overflow: hidden;
+}
+
+
+/*
+------------------------------------------
+--------- CONTENIDO PRINCIPAL ------------
+------------------------------------------
+*/
+#libro{
+	display: block;
+	padding: 20px 0;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.cierre{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.cierreTmp{
+	color: green;
+	font-size: 15px;
+	font-weight: bold;
+}
+.contenido {
+	float: left;
+	height: 86.5%;
+	margin-top: -2px;
+	width: 77%;
+}
+
+.red{
+	color:red;
+}
+
+.tituloContenido{
+	padding: 10px;
+	text-align: center;
+	width: 98%;
+}
+
+.tab,th,td{
+	border:1px solid #666;
+	border-collapse:collapse;
+	margin:0 auto;
+}
+
+.tab{
+	border:none;
+	border-top:1px solid #000;
+	margin:20px auto;
+	overflow:scroll;
+	height:100px;
+}
+.tab2{
+	border:none;
+	border-top:1px solid #000;
+	position: relative;
+	top: 0;
+	left: 0;
+	min-height:40px;
+	min-width: 400px; 
+}
+.tab2{
+	border:1px solid #666;
+	border-collapse:collapse;
+	margin:0 auto;
+	padding: 0;
+}
+.tab2 tbody th, .tab2 tbody td{
+	padding: 5px;
+}
+#tab tbody th, #tab tbody td{
+	padding: 3px 1px;
+}
+
+.cerrada{
+	border:none;
+	border-top:1px solid #000;
+	border-collapse:collapse;
+	display: inline-block;
+	margin: 40px 25px;
+}
+.tituloCuenta{
+	text-transform: uppercase;
+}
+.valor{
+	text-align: right;
+}
+tbody td,tbody th{
+	background:#eee;
+	padding:5px 10px;
+}
+
+tbody th{
+	background: url(../img/header_bg.png);
+	color: white;
+}
+
+
+
+/*
+------------------------------------------
+------------- CREAR CUENTA  --------------
+------------------------------------------
+*/
+
+
+#nuevaCuenta{
+	display: block;
+	margin:20px auto;
+	padding: 10px;
+	text-align: center;
+	width: 50%;
+}
+
+.cuentaTitulo, .opcionCuenta{
+	display: inline-block;
+	margin:10px auto;
+	text-align: left;
+	width: 45%;
+}
+
+input[type="submit"]{
+	margin: 15px 20%;
+	cursor: pointer;
+	width: 50%;
+}
+
+input[type="submit"]:hover{
+	box-shadow: 0px 2px 5px grey;
+}
+
+.fecha{
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+}
+
+.fecha input, .fecha label{
+	display: block;
+	font-weight: bold;
+	margin:7px auto;
+	text-align: center;
+	width: 100px;
+}

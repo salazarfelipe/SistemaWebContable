@@ -1,0 +1,7 @@
+Sistema Contable con Interfaz Web
+
+Consiste basicamente en un a aplicacion que permite a partir de las cuentas que se crean
+alli mismo, generar el libro mayor, el balance general y el estado de resultados. Aun faltan
+algunas partes como, el inicio de sesion y la edicion de cuentas (las transacciones realizadas)
+
+

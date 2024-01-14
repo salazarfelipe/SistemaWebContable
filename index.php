@@ -12,7 +12,7 @@
 		    </tr>
 		    <?
 		    include("conexion.php");
-		    $consulta = mysql_query("SELECT * FROM puc");
+		    $consulta = mysqli_query($connection,"SELECT * FROM puc");
 		    while($linea = mysql_fetch_array($consulta)){
  				echo "<tr>
 					<td>$linea[CODIGO]</td>

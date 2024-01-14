@@ -22,9 +22,9 @@
 				    <tr>
 				    	<td>
 				    	<?
-							$cuentas = mysql_query("SELECT * FROM cuentas ORDER BY RAZON");
+							$cuentas = mysqli_query($connection,"SELECT * FROM cuentas ORDER BY RAZON");
 							echo "<select name='cuenta1'><option value=''></option>";
-							while($row = mysql_fetch_row($cuentas))
+							while($row = mysqli_fetch_row($cuentas))
 								echo"<option id='verCuenta' value='".$row['1']."'> ".$row['0']."    "  .$row['1']."</option>";
 							echo "</select>";
 						?>
@@ -32,8 +32,8 @@
 				    	<td><input name="valor1" type="number" required></td>
 				    	<td>
 				    	<select name='tipo1'>
-				    		<option class="tipo1">debe</option>
-				    		<option class="tipo1">haber</option>
+				    		<option class="tipo1" value="debe">debe</option>
+				    		<option class="tipo1" value="haber">haber</option>
 				    	</select>
 				    </tr>
 				   
@@ -42,11 +42,11 @@
 				    </tr>
 				    <?
 				    	include('conexion.php');
-						$cuenta1 = $_POST[cuenta1];
-						$valor1 = $_POST[valor1];
-						$haber1 = $_POST[tipo1];
-						$fecha = $_POST[fecha];
-						mysql_query("INSERT INTO `contabilidad`.`$cuenta1` (`FECHA` ,`VALOR` ,`TIPO`)VALUES('$fecha', $valor1, '$tipo1');");
+						$cuenta1 = $_POST["cuenta1"];
+						$valor1 = $_POST["valor1"];
+						$tipo1 = $_POST["tipo1"];
+						$fecha = $_POST["fecha"];
+						mysqli_query($connection,"INSERT INTO `contabilidad`.`$cuenta1` (`FECHA` ,`VALOR` ,`TIPO`)VALUES('$fecha', $valor1, '$tipo1');");
 					?>
 		    	</form>
 		    </table>

@@ -14,10 +14,10 @@
 						$haber3 = $_POST[haber3];
 
 						$fecha = $_POST[fecha];
-						mysql_query("INSERT INTO `contabilidad`.`$cuenta1` (`FECHA1` ,`DEBE` ,`HABER` ,`FECHA2` ,`CODIGO`)VALUES (NULL,NULL,'$haber1','$fecha', '');");
+						mysqli_query($connection,"INSERT INTO `contabilidad`.`$cuenta1` (`FECHA1` ,`DEBE` ,`HABER` ,`FECHA2` ,`CODIGO`)VALUES (NULL,NULL,'$haber1','$fecha', '');");
 						/*
 						else{
-							mysql_query("INSERT INTO `contabilidad`.`$cuenta1` (`FECHA1` ,`DEBE` ,`HABER` ,`FECHA2` ,`CODIGO`)VALUES ('$fecha', '$debe1', NULL , NULL , '');");
+							mysqli_query($connection,"INSERT INTO `contabilidad`.`$cuenta1` (`FECHA1` ,`DEBE` ,`HABER` ,`FECHA2` ,`CODIGO`)VALUES ('$fecha', '$debe1', NULL , NULL , '');");
 						}*/
 ?>
 <section class="contenido">
@@ -30,7 +30,7 @@
 		    </tr>
 		    <?
 		    include("conexion.php");
-		    $consulta = mysql_query("SELECT * FROM puc");
+		    $consulta = mysqli_query($connection,"SELECT * FROM puc");
 		    while($linea = mysql_fetch_array($consulta)){
  				echo "<tr>
 					<td>$linea[CODIGO]</td>

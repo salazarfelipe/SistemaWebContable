@@ -13,8 +13,8 @@
 		<table class="tab">
 			<?
 				include("conexion.php");
-				$consultaIngresos = mysql_query("SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='haber'");
-				$consultaGastos = mysql_query("SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='debe'");
+				$consultaIngresos = mysqli_query($connection,"SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='haber'");
+				$consultaGastos = mysqli_query($connection,"SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='debe'");
 				$totalIngresos = 0;
 				while($row1 = mysql_fetch_array($consultaIngresos)){
 					$totalIngresos = $totalIngresos + $row1[VALOR];
@@ -26,7 +26,7 @@
 						<td></td>
 						<td class='valor cierre'>$totalIngresos</td>
 					</tr>";
-				$consultaIngresos = mysql_query("SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='haber'");
+				$consultaIngresos = mysqli_query($connection,"SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='haber'");
 				while($fila = mysql_fetch_array($consultaIngresos)){
 					echo"<tr>
 							<td></td>
@@ -46,7 +46,7 @@
 						<td></td>
 						<td class='valor cierre'>$totalGastos</td>
 					</tr>";
-				$consultaGastos = mysql_query("SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='debe'");
+				$consultaGastos = mysqli_query($connection,"SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='debe'");
 				while($fila = mysql_fetch_array($consultaGastos)){
 					echo"<tr>
 							<td></td>

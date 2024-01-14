@@ -11,7 +11,7 @@
 		    </tr>
 		    <?
 		    include("conexion.php");
-		    $consulta = mysql_query("SELECT * FROM cuentas ORDER BY RAZON");
+		    $consulta = mysqli_query($connection,"SELECT * FROM cuentas ORDER BY RAZON");
 		    while($linea = mysql_fetch_array($consulta)){
  				echo "<tr>
 					<td>$linea[CODIGO]</td>

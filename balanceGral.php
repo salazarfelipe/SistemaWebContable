@@ -19,13 +19,13 @@
 						</tr>
 						<?
 							include("conexion.php");
-							$consultaActivos = mysql_query("SELECT * FROM Resumen_Cuentas WHERE TIPO ='Activo'");
-							$consultaPasivos = mysql_query("SELECT * FROM Resumen_Cuentas WHERE TIPO ='Pasivo'");
-							$consultaPatrimonio = mysql_query("SELECT * FROM Resumen_Cuentas WHERE TIPO ='Patrimonio'");
-							$ConsultaTotalActivos = mysql_query("SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Activo'");
-							$ConsultaTotalPasivos = mysql_query("SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Pasivo'");
-							$ConsultaTotalPatrimonio = mysql_query("SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Patrimonio'");
-							$ConsultaTotalPatrimonio2 = mysql_query("SELECT VALOR FROM Utilidad_Del_Ejercicio");
+							$consultaActivos = mysqli_query($connection,"SELECT * FROM Resumen_Cuentas WHERE TIPO ='Activo'");
+							$consultaPasivos = mysqli_query($connection,"SELECT * FROM Resumen_Cuentas WHERE TIPO ='Pasivo'");
+							$consultaPatrimonio = mysqli_query($connection,"SELECT * FROM Resumen_Cuentas WHERE TIPO ='Patrimonio'");
+							$ConsultaTotalActivos = mysqli_query($connection,"SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Activo'");
+							$ConsultaTotalPasivos = mysqli_query($connection,"SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Pasivo'");
+							$ConsultaTotalPatrimonio = mysqli_query($connection,"SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Patrimonio'");
+							$ConsultaTotalPatrimonio2 = mysqli_query($connection,"SELECT VALOR FROM Utilidad_Del_Ejercicio");
 							$totalActivos = mysql_fetch_array($ConsultaTotalActivos);
 							$totalPasivos = mysql_fetch_array($ConsultaTotalPasivos);
 							$totalPatrimonio = mysql_fetch_array($ConsultaTotalPatrimonio);

@@ -17,7 +17,7 @@
 				$consultaGastos = mysqli_query($connection,"SELECT * FROM Ganancias_Y_Perdidas WHERE TIPO='debe'");
 				$totalIngresos = 0;
 				while($row1 = mysqli_fetch_array($consultaIngresos)){
-					$totalIngresos = $totalIngresos + $row1[VALOR"];
+					$totalIngresos = $totalIngresos + $row1["VALOR"];
 				}
 
 				echo "<tr>
@@ -30,14 +30,14 @@
 				while($fila = mysqli_fetch_array($consultaIngresos)){
 					echo"<tr>
 							<td></td>
-							<td>$fila[CUENTA]</td>
-							<td class='valor'>$fila[VALOR]</td>
+							<td>$fila[CUENTA"]."</td>
+							<td class='valor'>$fila[VALOR"]."</td>
 							<td></td>
 						</tr>";
 				}
 				$totalGastos = 0;
 				while($row2 = mysqli_fetch_array($consultaGastos)){
-					$totalGastos = $totalGastos + $row2[VALOR"];
+					$totalGastos = $totalGastos + ".$row2["VALOR"];
 				}
 
 				echo"<tr>
@@ -50,8 +50,8 @@
 				while($fila = mysqli_fetch_array($consultaGastos)){
 					echo"<tr>
 							<td></td>
-							<td>$fila[CUENTA]</td>
-							<td class='valor'>$fila[VALOR]</td>
+							<td>$fila[CUENTA"]."</td>
+							<td class='valor'>$fila[VALOR"]."</td>
 							<td></td>
 						</tr>";
 				}

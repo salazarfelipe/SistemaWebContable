@@ -23,8 +23,8 @@
 		$row1  = mysqli_fetch_array($cantDebe);
 		$row2 = mysqli_fetch_array($cantHaber);
 
-		$numDebe  = $row1[CANTIDAD"];
-		$numHaber = $row2[CANTIDAD"];
+		$numDebe  = $row1["CANTIDAD"];
+		$numHaber = ".$row2[""CANTIDAD"];
 
 		$max = 0;
 		$i = 0;

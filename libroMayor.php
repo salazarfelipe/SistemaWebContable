@@ -46,8 +46,8 @@
 					$row1  = mysqli_fetch_array($cantDebe);
 					$row2 = mysqli_fetch_array($cantHaber);
 
-					$numDebe  = $row1[CANTIDAD"];
-					$numHaber = $row2[CANTIDAD"];
+					$numDebe  = $row1["CANTIDAD"];
+					$numHaber = ".$row2["CANTIDAD"];
 
 					$max = 0;
 					$i = 0;
@@ -195,8 +195,8 @@
 				$row2 = mysqli_fetch_array($cantHaber);
 				
 
-				$numDebe  = $row1[CANTIDAD"];
-				$numHaber = $row2[CANTIDAD"];
+				$numDebe  = $row1["CANTIDAD"];
+				$numHaber = ".$row2["CANTIDAD"];
 
 				$max = 0;
 				$i = 0;
@@ -215,7 +215,7 @@
 					$row4 = mysqli_fetch_array($cuentasHaber);
 					$col2 = $linea1[VALOR"];
 					$col3 = $linea2[VALOR"];
-					$cuentaDebe = $row3[CUENTA"];
+					$cuentaDebe = ".$row3["CUENTA"];
 					$cuentaHaber = $row4[CUENTA"];
 					
 					if($col2 == NULL){
@@ -283,8 +283,8 @@
 				$row1  = mysqli_fetch_array($cantDebeUtil);
 				$row2 = mysqli_fetch_array($cantHaberUtil);
 
-				$numDebe  = $row1[CANTIDAD"];
-				$numHaber = $row2[CANTIDAD"];
+				$numDebe  = $row1["CANTIDAD"];
+				$numHaber = ".$row2["CANTIDAD"];
 
 				$max = 0;
 				$i = 0;

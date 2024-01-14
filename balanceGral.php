@@ -32,13 +32,13 @@
 							$totalPatrimonio2 = mysqli_fetch_array($ConsultaTotalPatrimonio2);
 							while($row1 = mysqli_fetch_array($consultaActivos)){
 								echo"<tr>
-										<td>$row1[CUENTA]</td>
-										<td class='valor'>$row1[VALOR]</td>
+										<td>".$row1['CUENTA']."</td>
+										<td class='valor'>".$row1["VALOR"]."</td>
 									</tr>";
 							}
 							echo"<tr>
 									<th>Total Activos</th>
-									<td class='valor cierreTmp'>$totalActivos[TOTAL]</td>
+									<td class='valor cierreTmp'>".$totalActivos["TOTAL"]."</td>
 								</tr>";
 
 						?>
@@ -53,13 +53,13 @@
 						<?
 						while($row2 = mysqli_fetch_array($consultaPasivos)){
 								echo"<tr>
-										<td>$row2[CUENTA]</td>
-										<td class='valor'>$row2[VALOR]</td>
+										<td>".$row2["CUENTA"]."</td>
+										<td class='valor'>".$row2["VALOR"]."</td>
 									</tr>";
 						}
 						echo"<tr>
 								<th>Total Pasivos</th>
-								<td class='valor'>$totalPasivos[TOTAL]</td>
+								<td class='valor'>".$totalPasivos["TOTAL"]."</td>
 							</tr>";
 						?>
 						<tr>
@@ -68,24 +68,24 @@
 						<?
 						while($row3 = mysqli_fetch_array($consultaPatrimonio)){
 								echo"<tr>
-										<td>$row3[CUENTA]</td>
-										<td class='valor'>$row3[VALOR]</td>
+										<td>".$row3["CUENTA"]."</td>
+										<td class='valor'>".$row3["VALOR"]."</td>
 									</tr>";
 						}
 						echo"<tr>
 								<td>Utilidad Del Ejercicio</td>
-								<td class='valor'>$totalPatrimonio2[VALOR]</td>
+								<td class='valor'>".$totalPatrimonio2["VALOR"]."</td>
 							</tr>";
-						$patrimonioTotal = $totalPatrimonio[TOTAL] + $totalPatrimonio2[VALOR"];
+						$patrimonioTotal = $totalPatrimonio["TOTAL"] + $totalPatrimonio2["VALOR"];
 						echo"<tr>
 								<th>Total Patrimonio</th>
 								<td class='valor'>$patrimonioTotal</td>
 							</tr>";
-						$patrimonioMasPasivo = $patrimonioTotal + $totalPasivos[TOTAL"];
+						$patrimonioMasPasivo = $patrimonioTotal + $totalPasivos["TOTAL"];
 
 						echo"<tr>
 								<th>Total Patrimonio + Pasivos</th>
-								<td class='valor cierreTmp'>$patrimonioMasPasivo</td>
+								<td class='valor cierreTmp'>".$patrimonioMasPasivo."</td>
 							</tr>";
 						?>
 						

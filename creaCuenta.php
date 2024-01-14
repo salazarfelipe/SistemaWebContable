@@ -29,9 +29,9 @@
 </html>
 <?
 	include("conexion.php");
-	$nombre = $_POST[nombre];
-	$codigo = $_POST[codigo];
-	$razon = $_POST[tipo];
+	$nombre = $_POST["nombre"];
+	$codigo = $_POST["codigo"];
+	$razon = $_POST["tipo"];
 	if($codigo!=NULL){
 		mysqli_query($connection,"CREATE TABLE $nombre (`ID` INT(30) AUTO_INCREMENT PRIMARY KEY,`FECHA` DATE NOT NULL ,`VALOR` FLOAT( 30 ) NOT NULL ,`TIPO` VARCHAR( 50 ) NOT NULL) ENGINE = MYISAM ;");
 		mysqli_query($connection,"INSERT INTO `contabilidad`.`cuentas` (`CODIGO` ,`DETALLE` ,`RAZON`) VALUES ('$codigo', '$nombre', '$razon');");

@@ -20,11 +20,11 @@
 		$cantDebe = mysqli_query($connection,"SELECT COUNT(*) as CANTIDAD FROM ".$nombre." WHERE TIPO='debe'");
 		$cantHaber = mysqli_query($connection,"SELECT COUNT(*) as CANTIDAD FROM ".$nombre." WHERE TIPO='haber'");
 
-		$row1  = mysql_fetch_array($cantDebe);
-		$row2 = mysql_fetch_array($cantHaber);
+		$row1  = mysqli_fetch_array($cantDebe);
+		$row2 = mysqli_fetch_array($cantHaber);
 
-		$numDebe  = $row1[CANTIDAD];
-		$numHaber = $row2[CANTIDAD];
+		$numDebe  = $row1[CANTIDAD"];
+		$numHaber = $row2[CANTIDAD"];
 
 		$max = 0;
 		$i = 0;
@@ -37,12 +37,12 @@
 		}
 
 		while($i<$max){
-			$linea1 = mysql_fetch_array($debe);
-			$linea2 = mysql_fetch_array($haber);
-			$col1 = $linea1[FECHA];
-			$col2 = $linea1[VALOR];
-			$col3 = $linea2[VALOR];
-			$col4 = $linea2[FECHA];
+			$linea1 = mysqli_fetch_array($debe);
+			$linea2 = mysqli_fetch_array($haber);
+			$col1 = $linea1[FECHA"];
+			$col2 = $linea1[VALOR"];
+			$col3 = $linea2[VALOR"];
+			$col4 = $linea2[FECHA"];
 			
 			if($col1 == NULL){
 				$col1 = '';

@@ -26,11 +26,11 @@
 							$ConsultaTotalPasivos = mysqli_query($connection,"SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Pasivo'");
 							$ConsultaTotalPatrimonio = mysqli_query($connection,"SELECT SUM(VALOR) AS TOTAL FROM Resumen_Cuentas WHERE TIPO='Patrimonio'");
 							$ConsultaTotalPatrimonio2 = mysqli_query($connection,"SELECT VALOR FROM Utilidad_Del_Ejercicio");
-							$totalActivos = mysql_fetch_array($ConsultaTotalActivos);
-							$totalPasivos = mysql_fetch_array($ConsultaTotalPasivos);
-							$totalPatrimonio = mysql_fetch_array($ConsultaTotalPatrimonio);
-							$totalPatrimonio2 = mysql_fetch_array($ConsultaTotalPatrimonio2);
-							while($row1 = mysql_fetch_array($consultaActivos)){
+							$totalActivos = mysqli_fetch_array($ConsultaTotalActivos);
+							$totalPasivos = mysqli_fetch_array($ConsultaTotalPasivos);
+							$totalPatrimonio = mysqli_fetch_array($ConsultaTotalPatrimonio);
+							$totalPatrimonio2 = mysqli_fetch_array($ConsultaTotalPatrimonio2);
+							while($row1 = mysqli_fetch_array($consultaActivos)){
 								echo"<tr>
 										<td>$row1[CUENTA]</td>
 										<td class='valor'>$row1[VALOR]</td>
@@ -51,7 +51,7 @@
 							<th colspan='2'>Pasivos</th>
 						</tr>
 						<?
-						while($row2 = mysql_fetch_array($consultaPasivos)){
+						while($row2 = mysqli_fetch_array($consultaPasivos)){
 								echo"<tr>
 										<td>$row2[CUENTA]</td>
 										<td class='valor'>$row2[VALOR]</td>
@@ -66,7 +66,7 @@
 							<th colspan='2'>Patrimonio</th>
 						</tr>
 						<?
-						while($row3 = mysql_fetch_array($consultaPatrimonio)){
+						while($row3 = mysqli_fetch_array($consultaPatrimonio)){
 								echo"<tr>
 										<td>$row3[CUENTA]</td>
 										<td class='valor'>$row3[VALOR]</td>
@@ -76,12 +76,12 @@
 								<td>Utilidad Del Ejercicio</td>
 								<td class='valor'>$totalPatrimonio2[VALOR]</td>
 							</tr>";
-						$patrimonioTotal = $totalPatrimonio[TOTAL] + $totalPatrimonio2[VALOR];
+						$patrimonioTotal = $totalPatrimonio[TOTAL] + $totalPatrimonio2[VALOR"];
 						echo"<tr>
 								<th>Total Patrimonio</th>
 								<td class='valor'>$patrimonioTotal</td>
 							</tr>";
-						$patrimonioMasPasivo = $patrimonioTotal + $totalPasivos[TOTAL];
+						$patrimonioMasPasivo = $patrimonioTotal + $totalPasivos[TOTAL"];
 
 						echo"<tr>
 								<th>Total Patrimonio + Pasivos</th>

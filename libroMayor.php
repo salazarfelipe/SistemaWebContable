@@ -22,9 +22,9 @@
 				mysqli_query($connection,"CREATE TABLE Utilidad_Del_Ejercicio (`ID` INT(30) AUTO_INCREMENT PRIMARY KEY, `FECHA` DATE NOT NULL ,`VALOR` FLOAT( 30 ) NOT NULL ,`TIPO` VARCHAR( 50 ) NOT NULL) ENGINE = MYISAM ;");
 				mysqli_query($connection,"CREATE TABLE Resumen_Cuentas (`ID` INT(30) AUTO_INCREMENT PRIMARY KEY, `CUENTA` VARCHAR( 50 ) NOT NULL ,`VALOR` FLOAT( 30 ) NOT NULL ,`TIPO` VARCHAR( 50 ) NOT NULL) ENGINE = MYISAM ;");
 
-				while($cuent = mysql_fetch_array($cuentas)){
+				while($cuent = mysqli_fetch_array($cuentas)){
 
-					$nombre = $cuent[DETALLE];
+					$nombre = $cuent[DETALLE"];
 
 					$consulta = mysqli_query($connection,"SELECT * FROM " .$nombre);
 					$haber = mysqli_query($connection,"SELECT * FROM ".$nombre." WHERE TIPO='haber' ORDER BY FECHA");
@@ -43,11 +43,11 @@
 					$cantDebe = mysqli_query($connection,"SELECT COUNT(*) as CANTIDAD FROM ".$nombre." WHERE TIPO='debe'");
 					$cantHaber = mysqli_query($connection,"SELECT COUNT(*) as CANTIDAD FROM ".$nombre." WHERE TIPO='haber'");
 
-					$row1  = mysql_fetch_array($cantDebe);
-					$row2 = mysql_fetch_array($cantHaber);
+					$row1  = mysqli_fetch_array($cantDebe);
+					$row2 = mysqli_fetch_array($cantHaber);
 
-					$numDebe  = $row1[CANTIDAD];
-					$numHaber = $row2[CANTIDAD];
+					$numDebe  = $row1[CANTIDAD"];
+					$numHaber = $row2[CANTIDAD"];
 
 					$max = 0;
 					$i = 0;
@@ -60,12 +60,12 @@
 					}
 
 					while($i<$max){
-						$linea1 = mysql_fetch_array($debe);
-						$linea2 = mysql_fetch_array($haber);
-						$col1 = $linea1[FECHA];
-						$col2 = $linea1[VALOR];
-						$col3 = $linea2[VALOR];
-						$col4 = $linea2[FECHA];
+						$linea1 = mysqli_fetch_array($debe);
+						$linea2 = mysqli_fetch_array($haber);
+						$col1 = $linea1[FECHA"];
+						$col2 = $linea1[VALOR"];
+						$col3 = $linea2[VALOR"];
+						$col4 = $linea2[FECHA"];
 						
 						if($col1 == NULL){
 							$col1 = '';
@@ -89,14 +89,14 @@
 							";
 						$i = $i + 1;
 					}
-					$tipo = $cuent[RAZON];
+					$tipo = $cuent[RAZON"];
 					if($tipo == 'Activo' || $tipo == 'Pasivo' || $tipo == 'Patrimonio' ){
 						$sumDebe = mysqli_query($connection,"SELECT SUM(VALOR) as TOTALDEBE  FROM ".$nombre." WHERE TIPO = 'debe'");
 						$sumHaber = mysqli_query($connection,"SELECT SUM(VALOR) as TOTALHABER  FROM ".$nombre." WHERE TIPO = 'haber'");
-						$consulta1 = mysql_fetch_array($sumDebe);
-						$consulta2 = mysql_fetch_array($sumHaber);
-						$totalDebe = $consulta1[TOTALDEBE];
-						$totalHaber = $consulta2[TOTALHABER];
+						$consulta1 = mysqli_fetch_array($sumDebe);
+						$consulta2 = mysqli_fetch_array($sumHaber);
+						$totalDebe = $consulta1[TOTALDEBE"];
+						$totalHaber = $consulta2[TOTALHABER"];
 						if($totalHaber == NULL){
 							$totalHaber = 0;
 						}
@@ -130,10 +130,10 @@
 					if($tipo == 'Ingresos'|| $tipo == 'Gastos'){
 						$sumDebe = mysqli_query($connection,"SELECT SUM(VALOR) as TOTALDEBE  FROM ".$nombre." WHERE TIPO = 'debe'");
 						$sumHaber = mysqli_query($connection,"SELECT SUM(VALOR) as TOTALHABER  FROM ".$nombre." WHERE TIPO = 'haber'");
-						$consulta1 = mysql_fetch_array($sumDebe);
-						$consulta2 = mysql_fetch_array($sumHaber);
-						$totalDebe = $consulta1[TOTALDEBE];
-						$totalHaber = $consulta2[TOTALHABER];
+						$consulta1 = mysqli_fetch_array($sumDebe);
+						$consulta2 = mysqli_fetch_array($sumHaber);
+						$totalDebe = $consulta1[TOTALDEBE"];
+						$totalHaber = $consulta2[TOTALHABER"];
 						if($totalHaber == NULL){
 							$totalHaber = $totalDebe;
 							echo "<tr'>
@@ -191,12 +191,12 @@
 				$cuentasDebe = mysqli_query($connection,"SELECT CUENTA FROM Ganancias_Y_Perdidas WHERE TIPO = 'debe'");
 				$cuentasHaber = mysqli_query($connection,"SELECT CUENTA FROM Ganancias_Y_Perdidas WHERE TIPO = 'haber'");
 				
-				$row1  = mysql_fetch_array($cantDebe);
-				$row2 = mysql_fetch_array($cantHaber);
+				$row1  = mysqli_fetch_array($cantDebe);
+				$row2 = mysqli_fetch_array($cantHaber);
 				
 
-				$numDebe  = $row1[CANTIDAD];
-				$numHaber = $row2[CANTIDAD];
+				$numDebe  = $row1[CANTIDAD"];
+				$numHaber = $row2[CANTIDAD"];
 
 				$max = 0;
 				$i = 0;
@@ -209,14 +209,14 @@
 				}
 
 				while($i<$max){
-					$linea1 = mysql_fetch_array($debe);
-					$linea2 = mysql_fetch_array($haber);
-					$row3  = mysql_fetch_array($cuentasDebe);
-					$row4 = mysql_fetch_array($cuentasHaber);
-					$col2 = $linea1[VALOR];
-					$col3 = $linea2[VALOR];
-					$cuentaDebe = $row3[CUENTA];
-					$cuentaHaber = $row4[CUENTA];
+					$linea1 = mysqli_fetch_array($debe);
+					$linea2 = mysqli_fetch_array($haber);
+					$row3  = mysqli_fetch_array($cuentasDebe);
+					$row4 = mysqli_fetch_array($cuentasHaber);
+					$col2 = $linea1[VALOR"];
+					$col3 = $linea2[VALOR"];
+					$cuentaDebe = $row3[CUENTA"];
+					$cuentaHaber = $row4[CUENTA"];
 					
 					if($col2 == NULL){
 						$col2 = '';
@@ -239,10 +239,10 @@
 
 				$sumDebeTmp = mysqli_query($connection,"SELECT SUM(VALOR) as TOTALDEBE  FROM Ganancias_Y_Perdidas WHERE TIPO = 'debe'");
 				$sumHaberTmp = mysqli_query($connection,"SELECT SUM(VALOR) as TOTALHABER  FROM Ganancias_Y_Perdidas WHERE TIPO = 'haber'");
-				$consultaTmp1 = mysql_fetch_array($sumDebeTmp);
-				$consultaTmp2 = mysql_fetch_array($sumHaberTmp);
-				$totalDebeTmp = $consultaTmp1[TOTALDEBE];
-				$totalHaberTmp = $consultaTmp2[TOTALHABER];
+				$consultaTmp1 = mysqli_fetch_array($sumDebeTmp);
+				$consultaTmp2 = mysqli_fetch_array($sumHaberTmp);
+				$totalDebeTmp = $consultaTmp1[TOTALDEBE"];
+				$totalHaberTmp = $consultaTmp2[TOTALHABER"];
 				if($totalHaberTmp == NULL){
 					$totalHaberTmp = 0;
 				}
@@ -280,11 +280,11 @@
 				$cantDebeUtil = mysqli_query($connection,"SELECT COUNT(*) as CANTIDAD FROM Utilidad_Del_Ejercicio WHERE TIPO='debe'");
 				$cantHaberUtil = mysqli_query($connection,"SELECT COUNT(*) as CANTIDAD FROM Utilidad_Del_Ejercicio WHERE TIPO='haber'");
 
-				$row1  = mysql_fetch_array($cantDebeUtil);
-				$row2 = mysql_fetch_array($cantHaberUtil);
+				$row1  = mysqli_fetch_array($cantDebeUtil);
+				$row2 = mysqli_fetch_array($cantHaberUtil);
 
-				$numDebe  = $row1[CANTIDAD];
-				$numHaber = $row2[CANTIDAD];
+				$numDebe  = $row1[CANTIDAD"];
+				$numHaber = $row2[CANTIDAD"];
 
 				$max = 0;
 				$i = 0;
@@ -297,12 +297,12 @@
 				}
 
 				while($i<$max){
-					$linea1 = mysql_fetch_array($debeUtil);
-					$linea2 = mysql_fetch_array($haberUtil);
-					$col1 = $linea1[FECHA];
-					$col2 = $linea1[VALOR];
-					$col3 = $linea2[VALOR];
-					$col4 = $linea2[FECHA];
+					$linea1 = mysqli_fetch_array($debeUtil);
+					$linea2 = mysqli_fetch_array($haberUtil);
+					$col1 = $linea1[FECHA"];
+					$col2 = $linea1[VALOR"];
+					$col3 = $linea2[VALOR"];
+					$col4 = $linea2[FECHA"];
 					
 					if($col1 == NULL){
 						$col1 = '';

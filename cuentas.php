@@ -14,9 +14,9 @@
 		    $consulta = mysqli_query($connection,"SELECT * FROM cuentas ORDER BY RAZON");
 		    while($linea = mysqli_fetch_array($consulta)){
  				echo "<tr>
-					<td>$linea[CODIGO"]."</td>
-					<td>$linea[DETALLE"]."</td>
-					<td>$linea[RAZON"]."</td>
+					<td>".$linea["CODIGO"]."</td>
+					<td>".$linea["DETALLE"]."</td>
+					<td>".$linea["RAZON"]."</td>
 				</tr>";
 				$numero++;
 			}

@@ -20,8 +20,8 @@
 						</script>
 						<option id='verCuenta' value=""></option>
 					<?
-						$cuentas = mysql_query("SELECT * FROM cuentas ORDER BY CODIGO");
-						while($row = mysql_fetch_row($cuentas))
+						$cuentas = mysqli_query($connection,"SELECT * FROM cuentas ORDER BY CODIGO");
+						while($row = mysqli_fetch_row($cuentas))
 							echo"<option id='verCuenta' value='".$row['1']."'> ".$row['0']."    "  .$row['1']."</option>";
 					?>
 				</select>
